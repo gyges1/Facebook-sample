@@ -1,0 +1,17 @@
+= link_to '« Careers at Cirrus', 'javascript:void(0);', :class => 'back_home'
+%br
+- @job_detail["records"].each do |job|
+  %h3.fb_section_header= job["Name"]
+  %b= job["Functional_Area__c"]
+  %br
+  %b= job["Location__c"]
+  %br
+  %br
+  = job["Job_Description__c"]
+  %br
+  %br
+  #btns
+    %input{:type => "button", :value => "Apply for this Job", :id => "btn_form"}
+    %span
+      = ' or ' 
+      = link_to 'Return to the list', 'javascript:void(0);', :class => 'back_home'

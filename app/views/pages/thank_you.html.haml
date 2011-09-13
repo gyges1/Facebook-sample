@@ -1,0 +1,21 @@
+= link_to '« Return to the list', 'javascript:void(0);', :class => 'back_home'
+%br
+%hr
+%h1 Thanks for applying!
+%hr
+%br
+#labels
+  %b Name :
+  %br
+  %b Email :
+#data
+  = "#{params["Name__c"]}"
+  %br
+  = "#{params["Email__c"]}"
+.clear
+%br
+%hr
+%br
+= "Attachment: #{link_to 'Resume', 'javascript:void(0);'}".html_safe
+%br
+= image_tag "tom_davis.png", :id => 'tom_davis'

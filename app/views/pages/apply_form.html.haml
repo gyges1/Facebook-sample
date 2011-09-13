@@ -1,0 +1,26 @@
+= link_to '« Careers at Cirrus', 'javascript:void(0);', :class => 'back_home'
+%br
+%h3.fb_section_header Apply Form
+
+- form_tag({:action => 'thank_you'}, {:method => 'post', :multipart => true, :id => 'thank_you_form'}) do
+  = hidden_field_tag 'Candidate__c', @candidate
+  = hidden_field_tag 'Position__c', @user_data["job"]
+  = hidden_field_tag 'First_Name__c', @user_data["first_name"]
+  = hidden_field_tag 'Last_Name__c', @user_data["last_name"]
+  = label_tag 'Name'
+  = text_field_tag 'Name__c', "#{@user_data["first_name"]} #{@user_data["last_name"]}"
+  %br
+  %br
+  = label_tag 'E-mail'
+  = text_field_tag 'Email__c', @user_data["email"]
+  %br
+  %br
+  = label_tag 'Attach Resume'
+  = file_field_tag 'attachment'
+  %br
+  %br
+  #btns
+    = submit_tag 'Apply', :id => 'btn_apply'
+    %span
+      = ' or ' 
+      = link_to 'Cancel', 'javascript:void(0);', :class => 'back_home'

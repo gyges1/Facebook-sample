@@ -1,0 +1,15 @@
+#header
+  %h1 Careers at Schneider
+  Want to be part of something special? Schneider is a growing and was voted in the top 10 places to work. We are searching for talented individuals to help take Cirrus to the next level. We have positions open in all areas of the company, and in locations throughout the world.
+
+%h3.fb_section_header Jobs Found
+- @jobs["records"].each do |job|
+  .job
+    .content
+      = link_to (make_title job).html_safe, "javascript:void(0);", :class => 'job_button', :name => job['Id']
+      %br
+      - unless job["Job_Description__c"].nil?
+        = "#{job["Job_Description__c"].slice 0..110}".strip + "..."
+    .date
+      = nice_date job["Open_Date__c"]
+    .clear

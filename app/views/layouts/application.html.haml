@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title Recruiting Demo
+    = stylesheet_link_tag 'main.css'
+    = javascript_include_tag 'http://connect.facebook.net/en_US/all.js'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    #fb-root
+    #ajax1
+      = yield
